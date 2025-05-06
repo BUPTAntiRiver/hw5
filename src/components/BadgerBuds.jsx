@@ -7,9 +7,11 @@ import BadgerBudsDataContext from "../contexts/BadgerBudsDataContext";
 export default function BadgerBuds() {
 
     const [buds, setBuds] = useState([]);
+    sessionStorage.setItem('savedCatIds', JSON.stringify([]))
+    sessionStorage.setItem('adoptedCatIds', JSON.stringify([]))
 
     useEffect(() => {
-        fetch('https://cs571api.cs.wisc.edu/rest/s25/hw5/buds', {
+        fetch('https://cs571.org/rest/s25/hw5/buds', {
             headers: {
                 "X-CS571-ID": CS571.getBadgerId()
             }
